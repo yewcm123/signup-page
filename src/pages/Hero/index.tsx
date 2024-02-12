@@ -5,7 +5,7 @@ function Hero() {
     const navigate = useNavigate();
   return (
     <>
-      <div className="hero">
+      <div className="w-full h-full hero ">
         <h1>Welcome to <span className="font-bold primary-color">Mugen</span></h1>
         <h3>Your <span className="primary-color">One Stop Solution</span> to all things in insurance</h3>
         <div className="flex justify-center gap-3">

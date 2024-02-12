@@ -8,8 +8,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(57, 55, 55, 0.87);
-  background-color: #b9b4b4;
+  color: #4e598c;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +18,7 @@
 }
 
 .primary-color {
-  color: #1976d2
+  color: #cba26c;
 }
 a {
   font-weight: 500;
@@ -33,7 +33,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
