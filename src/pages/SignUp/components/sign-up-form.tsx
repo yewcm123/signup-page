@@ -1,16 +1,15 @@
-import { Button } from '@mui/material'
-import { Formik, useFormik } from 'formik'
-import { signUpSchema } from '../../../schemas/index'
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from '@mui/material'
+import { Formik } from 'formik'
 import { Form } from 'react-router-dom'
+import { signUpSchema } from '../../../schemas/index'
 import InputField from './InputField'
-
-export interface SignUpValues {
-  firstName: string
-  lastName: string
-  email: string
-  password: string
-  confirmPassword: string
-}
+import { Occupation } from '../../../utils/constants'
 
 const onSubmit = async (values, actions) => {
   console.log(values)
@@ -20,7 +19,6 @@ const onSubmit = async (values, actions) => {
 }
 
 const SignUpForm: React.FC = () => {
-
   return (
     <Formik
       onSubmit={onSubmit}
@@ -28,6 +26,7 @@ const SignUpForm: React.FC = () => {
       initialValues={{
         firstName: '',
         lastName: '',
+        occupation: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -49,6 +48,27 @@ const SignUpForm: React.FC = () => {
                 type="text"
                 placeholder="Last Name"
               />
+            </div>
+            <div className="mb-5">
+              <FormControl variant="outlined" fullWidth>
+                <InputLabel>Occupation</InputLabel>
+                <Select
+                  name="occupation"
+                  placeholder="occupation"
+                  label="Occupation"
+                  fullWidth
+                >
+                  <MenuItem value={Occupation.FRONTEND_DEVELOPER}>
+                    Frontend Developer
+                  </MenuItem>
+                  <MenuItem value={Occupation.BACKEND_DEVELOPER}>
+                    Backend Developer
+                  </MenuItem>
+                  <MenuItem value={Occupation.FULL_STACK_DEVELOPER}>
+                    Full Stack Developer
+                  </MenuItem>
+                </Select>
+              </FormControl>
             </div>
             <div className="mb-5">
               <InputField
