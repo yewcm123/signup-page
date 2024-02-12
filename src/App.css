@@ -9,11 +9,6 @@
   text-align: center;
 }
 
-#sign-up {
-  margin: auto;
-  width: 90vw;
-}
-
 input[type='text'] {
   width: 100%;
   padding: 12px 20px;
