@@ -10,7 +10,7 @@ export const signUpSchema = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
     email: yup.string().email("Please enter valid email").required('Required'),
-    occupation: yup.array().of(occupationSchema),
+    occupation: yup.array().of(occupationSchema).min(1, 'Please select your occupation').required('Required'),
     password: yup.string().min(5).matches(passwordRules, { message: "Please create a stronger password" }).required('Required'),
     confirmPassword: yup.string().oneOf([yup.ref('password'), undefined], "Password must match").required('Required')
 

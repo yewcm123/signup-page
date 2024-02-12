@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const navigate = useNavigate()
   return (
-    <div className="align-middle">
+    <div className="w-10/12 m-auto align-middle">
       <h1 className="mb-10">Sign Up</h1>
       <SignUpForm />
       <Button

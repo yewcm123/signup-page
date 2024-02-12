@@ -1,6 +1,7 @@
 import {
   Button,
   FormControl,
+  FormHelperText,
   InputLabel,
   MenuItem,
   Select,
@@ -36,7 +37,7 @@ const SignUpForm: React.FC = () => {
         <Form>
           <div className="mb-5">
             <div className="gap-5 mb-5 md:flex">
-              <div className='mb-5 md:mb-0'>
+              <div className="flex-grow mb-5 md:mb-0">
                 <InputField
                   fullwidth
                   label="First Name"
@@ -45,7 +46,7 @@ const SignUpForm: React.FC = () => {
                   placeholder="First Name"
                 />
               </div>
-              <div className='md:mb-0'>
+              <div className="flex-grow ">
                 <InputField
                   fullwidth
                   label="Last Name"
@@ -56,13 +57,21 @@ const SignUpForm: React.FC = () => {
               </div>
             </div>
             <div className="mb-5">
-              <FormControl variant="outlined" fullWidth>
+              <FormControl
+                variant="outlined"
+                fullWidth
+                error={
+                  props.touched.occupation && Boolean(props.errors.occupation)
+                }
+              >
                 <InputLabel>Occupation</InputLabel>
                 <Select
                   name="occupation"
                   placeholder="occupation"
                   label="Occupation"
                   fullWidth
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
                 >
                   <MenuItem value={Occupation.FRONTEND_DEVELOPER}>
                     Frontend Developer
@@ -74,6 +83,10 @@ const SignUpForm: React.FC = () => {
                     Full Stack Developer
                   </MenuItem>
                 </Select>
+                {props.touched.occupation &&
+                  Boolean(props.errors.occupation) && (
+                    <FormHelperText>{props.errors.occupation}</FormHelperText>
+                  )}
               </FormControl>
             </div>
             <div className="mb-5">
