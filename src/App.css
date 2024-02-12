@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#sign-up {
+  margin: auto;
+  width: 80vw;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+
+}
+
+.card {
+  padding: 2em;
+}
