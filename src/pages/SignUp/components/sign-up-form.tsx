@@ -35,19 +35,25 @@ const SignUpForm: React.FC = () => {
       {(props) => (
         <Form>
           <div className="mb-5">
-            <div className="mb-5">
-              <InputField
-                label="First Name"
-                name="firstName"
-                type="text"
-                placeholder="First Name"
-              />
-              <InputField
-                label="Last Name"
-                name="lastName"
-                type="text"
-                placeholder="Last Name"
-              />
+            <div className="gap-5 mb-5 md:flex">
+              <div className='mb-5 md:mb-0'>
+                <InputField
+                  fullwidth
+                  label="First Name"
+                  name="firstName"
+                  type="text"
+                  placeholder="First Name"
+                />
+              </div>
+              <div className='md:mb-0'>
+                <InputField
+                  fullwidth
+                  label="Last Name"
+                  name="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </div>
             </div>
             <div className="mb-5">
               <FormControl variant="outlined" fullWidth>

@@ -11,10 +11,10 @@
 
 #sign-up {
   margin: auto;
-  width: 80vw;
+  width: 90vw;
 }
 
-input[type=text] {
+input[type='text'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -31,9 +31,12 @@ input[type=text] {
   flex-direction: column;
   align-items: start;
   width: 100%;
-
 }
 
 .card {
   padding: 2em;
+}
+
+.container-bg {
+  background-image: url(../public/pexels-mikhail-nilov-7731402.jpg);
 }
