@@ -5,9 +5,21 @@
 #root {
   max-width: 100vw;
   height: 100vh;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
+}
+
+#sign-up {
+  background-image: url('bg-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input[type='text'] {
@@ -36,6 +48,19 @@ input[type='text'] {
   padding: 2em;
 }
 
+.card-container {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+}
+
 .container-bg {
   background-image: url(../public/pexels-mikhail-nilov-7731402.jpg);
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    padding: 5rem;
+  }
 }
