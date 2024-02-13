@@ -7,19 +7,23 @@ import {
   Select,
 } from '@mui/material'
 import { Formik } from 'formik'
-import { Form } from 'react-router-dom'
+import { MuiTelInput } from 'mui-tel-input'
+import { Form, useNavigate } from 'react-router-dom'
 import { signUpSchema } from '../../../schemas/index'
-import InputField from './InputField'
 import { Occupation } from '../../../utils/constants'
+import InputField from './InputField'
 
-const onSubmit = async (values, actions) => {
+const SignUpForm: React.FC = () => {
+ const navigate = useNavigate()
+
+ const onSubmit = async (values, actions) => {
   console.log(values)
   console.log(actions)
   await new Promise((resolve) => setTimeout(resolve, 1000))
   actions.resetForm()
+  navigate('/home')
 }
 
-const SignUpForm: React.FC = () => {
   return (
     <Formik
       onSubmit={onSubmit}
@@ -27,6 +31,7 @@ const SignUpForm: React.FC = () => {
       initialValues={{
         firstName: '',
         lastName: '',
+        phoneNumber: '',
         occupation: '',
         email: '',
         password: '',
@@ -34,7 +39,7 @@ const SignUpForm: React.FC = () => {
       }}
     >
       {(props) => (
-        <Form>
+        <Form autoComplete='on'>
           <div className="mb-5">
             <div className="gap-5 mb-5 md:flex">
               <div className="flex-grow mb-5 md:mb-0">
@@ -56,6 +61,23 @@ const SignUpForm: React.FC = () => {
                 />
               </div>
             </div>
+            {/* <div className="mb-5">
+              <MuiTelInput
+                fullWidth
+                label="Phone Number"
+                name='phoneNumber'
+                placeholder="Phone Number"
+                value={props.values.phoneNumber}
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
+                error={
+                  props.touched.phoneNumber && Boolean(props.errors.phoneNumber)
+                }
+                helperText={
+                  props.touched.phoneNumber && props.errors.phoneNumber
+                }
+              />
+            </div> */}
             <div className="mb-5">
               <FormControl
                 variant="outlined"
@@ -72,6 +94,7 @@ const SignUpForm: React.FC = () => {
                   fullWidth
                   onChange={props.handleChange}
                   onBlur={props.handleBlur}
+                  value={props.values.occupation}
                 >
                   <MenuItem value={Occupation.FRONTEND_DEVELOPER}>
                     Frontend Developer
