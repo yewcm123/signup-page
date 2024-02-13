@@ -30,8 +30,8 @@ The Sign Up page has a mobile responsive design and demonstrates multiple input 
 ## Preview
 
 Desktop View:
-![Desktop View](.\public\signup-desktop.png)
+![Desktop View](./public/signup-desktop.png)
 
 
 Mobile View:
-![Mobile View](.\public\signup-mobile.png)
+![Mobile View](./public/signup-mobile.png)
