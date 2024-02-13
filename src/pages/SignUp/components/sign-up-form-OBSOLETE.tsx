@@ -12,7 +12,6 @@ export interface SignUpValues {
 
 const onSubmit = async (values, actions) => {
   console.log(values)
-  console.log(actions)
   await new Promise((resolve) => setTimeout(resolve, 1000))
   actions.resetForm()
 }
@@ -38,7 +37,6 @@ const SignUpForm: React.FC = () => {
     validationSchema: signUpSchema,
   })
 
-  console.log(errors)
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">

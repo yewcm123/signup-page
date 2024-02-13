@@ -11,7 +11,6 @@ interface Props {
 
 const InputField = ({  ...props }: Props) => {
   const [field, meta] = useField(props)
-  console.log(field)
   return (
     <TextField
       fullWidth={props.fullwidth ? true : false}
