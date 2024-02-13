@@ -23,6 +23,10 @@ The Sign Up page has a mobile responsive design and demonstrates multiple input 
 - Yup 
 - React Router 
 
+## How to Run
+1. First run 'npm install'
+2. Then run 'npm run dev'
+
 ## Preview
 
 Desktop View:
