@@ -6,19 +6,18 @@ import {
   MenuItem,
   Select,
 } from '@mui/material'
-import { Formik } from 'formik'
+import { Formik, FormikHelpers } from 'formik'
 import { Form, useNavigate } from 'react-router-dom'
-import { signUpSchema } from '../../../schemas/index'
+import { signUpSchema, signUpValidationSchema } from '../../../schemas/sign-up.schema.'
 import { Occupation } from '../../../utils/constants'
-import InputField from './InputField'
+import InputField from './input-field'
 import MuiPhoneNumber from 'material-ui-phone-number'
 
 const SignUpForm: React.FC = () => {
   const navigate = useNavigate()
 
-  const onSubmit = async (values, actions) => {
+  const onSubmit = async (values: signUpSchema, actions: FormikHelpers<signUpSchema>) => {
     console.log(values)
-    console.log(actions)
     await new Promise((resolve) => setTimeout(resolve, 1000))
     actions.resetForm()
     navigate('/home')
@@ -27,7 +26,7 @@ const SignUpForm: React.FC = () => {
   return (
     <Formik
       onSubmit={onSubmit}
-      validationSchema={signUpSchema}
+      validationSchema={signUpValidationSchema}
       initialValues={{
         firstName: '',
         lastName: '',

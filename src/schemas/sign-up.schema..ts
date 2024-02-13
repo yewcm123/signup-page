@@ -6,7 +6,17 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 const occupationList = Object.values(Occupation)
 // const occupationSchema = yup.string().oneOf(occupationList)
 
-export const signUpSchema = yup.object().shape({
+export interface signUpSchema {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    email: string;
+    occupation: string;
+    password: string;
+    confirmPassword: string
+}
+
+export const signUpValidationSchema: yup.Schema<signUpSchema> = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
     phoneNumber: yup.string().required('Required'),  
