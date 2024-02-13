@@ -22,3 +22,12 @@ The Sign Up page has a mobile responsive design and demonstrates multiple input 
 - Formik 
 - Yup 
 - React Router 
+
+## Preview
+
+Desktop View:
+![Desktop View](public\signup-desktop.png)
+
+
+Mobile View:
+![Mobile View](public\signup-mobile.png)
