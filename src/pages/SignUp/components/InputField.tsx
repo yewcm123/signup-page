@@ -14,15 +14,12 @@ const InputField = ({  ...props }: Props) => {
   return (
     <TextField
       fullWidth={props.fullwidth ? true : false}
-      label={props.label}
-      placeholder={props.name}
-      name={props.name}
-      type={props.type}
       value={field.value}
       error={Boolean(meta.error) && meta.touched}
       helperText={meta.touched && meta.error}
       onChange={field.onChange}
       onBlur={field.onBlur}
+      {...props}
     />
   )
 }
